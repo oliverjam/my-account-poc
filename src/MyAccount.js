@@ -10,7 +10,7 @@ function MyAccount({ children }) {
   return (
     <div style={{ display: "flex", minHeight: "calc(100vh - 3rem)" }}>
       <SideNav />
-      <main style={{ padding: 32 }}>
+      <main style={{ maxWidth: "50rem", padding: 32 }}>
         {/* <Breadcrumbs pathname={location.pathname} /> */}
         <Router primary={false}>
           <EventsNav path="events/*" />
