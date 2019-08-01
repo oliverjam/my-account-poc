@@ -20,7 +20,7 @@ import OrderResale from "./events/OrderResale";
 
 import Profile from "./profile/Profile";
 import ProfileDetails from "./profile/ProfileDetails";
-import PaymentDetails from "./profile/PaymentDetails";
+import BillingDetails from "./profile/BillingDetails";
 import SellerDetails from "./profile/SellerDetails";
 
 import Settings from "./settings/Settings";
@@ -47,7 +47,7 @@ function App() {
           </Events>
           <Profile path="profile">
             <ProfileDetails path="details" />
-            <PaymentDetails path="payment" />
+            <BillingDetails path="billing" />
             <SellerDetails path="seller" />
           </Profile>
           <Settings path="settings">

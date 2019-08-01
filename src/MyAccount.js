@@ -54,7 +54,7 @@ function SideNav() {
               <NavLink to="profile/details">Profile details</NavLink>
             </li>
             <li>
-              <NavLink to="profile/payment">Payment details</NavLink>
+              <NavLink to="profile/billing">Billing details</NavLink>
             </li>
             <li>
               <NavLink to="profile/seller">Seller details</NavLink>
