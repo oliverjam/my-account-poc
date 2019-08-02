@@ -29,7 +29,13 @@ function MyAccount({ children }) {
           <SettingsNav path="settings/*" />
         </Router>
       </div>
-      <div style={{ gridColumn: "4 / 5", gridRow: "2 / -1", padding: 32 }}>
+      <div
+        style={{
+          gridColumn: "4 / 5",
+          gridRow: "2 / -1",
+          padding: "0 2rem 2rem"
+        }}
+      >
         {children}
       </div>
     </div>

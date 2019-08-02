@@ -1,6 +1,7 @@
 import React from "react";
 import Stack from "../shared/Stack";
 import EditCard from "./EditCard";
+import VisuallyHidden from "../shared/VisuallyHidden";
 
 function SellerDetails({ location }) {
   const searchParams = new URLSearchParams(location.search);
@@ -9,13 +10,8 @@ function SellerDetails({ location }) {
   const [someEditing, setSomeEditing] = React.useState(false);
   return (
     <div>
+      <VisuallyHidden>Seller details</VisuallyHidden>
       <Stack space="1.5rem">
-        <h1>Seller details</h1>
-        <p>
-          On this page you can edit how you would like to get paid for any
-          tickets you sell on Ticketmaster. Any changes will affect any resale
-          listings you already have.
-        </p>
         <EditCard
           title="Personal information"
           disabled={someEditing}

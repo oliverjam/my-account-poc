@@ -19,7 +19,7 @@ function EditCard({ title, children, onEditing, disabled, ...rest }) {
   }, [onEditing, editing]);
 
   return (
-    <Card style={{ marginTop: 24 }} {...rest}>
+    <Card {...rest}>
       <Card.Title>{title}</Card.Title>
       {!editing && (
         <Card.Action disabled={disabled} onClick={() => setEditing(true)}>
