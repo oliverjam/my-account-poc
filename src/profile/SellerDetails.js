@@ -21,7 +21,7 @@ function SellerDetails({ location }) {
           disabled={someEditing}
           onEditing={editing => setSomeEditing(editing)}
         >
-          <Stack>
+          <Stack space="1.5rem">
             <EditCard.Kyc kyc={kyc} type="id">
               Please upload proof of identity
             </EditCard.Kyc>
@@ -34,7 +34,7 @@ function SellerDetails({ location }) {
           disabled={someEditing}
           onEditing={editing => setSomeEditing(editing)}
         >
-          <Stack>
+          <Stack space="1.5rem">
             <EditCard.Kyc kyc={kyc} type="bank">
               Please upload a bank statement
             </EditCard.Kyc>
