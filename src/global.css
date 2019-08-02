@@ -58,11 +58,16 @@ button:disabled {
   opacity: 0.6;
 }
 
-.stack > * + * {
+.stack--vertical > * + * {
   margin-top: var(--space);
 }
 
+.stack--horizontal > * + * {
+  margin-left: var(--space);
+}
+
 .page-layout {
+  min-height: calc(100vh - 3rem);
   display: grid;
   grid-template-columns: 2rem 16rem 2rem 50rem 1fr;
   grid-template-rows: auto 1rem 1fr;
