@@ -30,27 +30,31 @@ function EditCard({ title, children, onEditing, disabled, ...rest }) {
         </Card.Action>
       )}
       <Card.Body>
-        <EditContext.Provider value={editing}>{children}</EditContext.Provider>
-        {editing && (
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "flex-end"
-            }}
-          >
-            <button onClick={() => setEditing(false)}>Cancel</button>
-            <button
-              onClick={() => setEditing(false)}
+        <Stack space="2rem">
+          <EditContext.Provider value={editing}>
+            {children}
+          </EditContext.Provider>
+          {editing && (
+            <div
               style={{
-                marginLeft: 8,
-                background: "var(--primary)",
-                color: "white"
+                display: "flex",
+                justifyContent: "flex-end"
               }}
             >
-              Save changes
-            </button>
-          </div>
-        )}
+              <button onClick={() => setEditing(false)}>Cancel</button>
+              <button
+                onClick={() => setEditing(false)}
+                style={{
+                  marginLeft: 8,
+                  background: "var(--primary)",
+                  color: "white"
+                }}
+              >
+                Save changes
+              </button>
+            </div>
+          )}
+        </Stack>
       </Card.Body>
     </Card>
   );
@@ -63,6 +67,7 @@ function Kyc({ kyc, type, children, ...rest }) {
     <details
       style={{
         boxShadow: "0 2px 4px hsla(220, 10%, 40%, 0.2)",
+        border: "1px solid hsl(220, 10%, 96%)",
         borderRadius: 4,
         borderLeft: "4px solid red",
         padding: 24
@@ -88,7 +93,10 @@ function Input({ id, label, style, ...rest }) {
   const editing = useEditing();
   return (
     <div style={style}>
-      <label htmlFor={id} style={{ fontSize: 14, fontWeight: 600 }}>
+      <label
+        htmlFor={id}
+        style={{ paddingLeft: editing && 12, fontSize: 14, fontWeight: 600 }}
+      >
         {label}
       </label>
       <input
@@ -110,7 +118,7 @@ const disabledStyles = {
 const inputStyles = {
   width: "100%",
   marginTop: 4,
-  padding: 8,
+  padding: "0.5rem 0.75rem",
   border: "1px solid hsl(220, 10%, 90%)",
   borderRadius: 4
 };
