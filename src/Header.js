@@ -10,7 +10,7 @@ export default () => (
       alignItems: "center",
       fontWeight: 900,
       color: "white",
-      backgroundColor: "rgb(2, 108, 223)",
+      backgroundColor: "var(--primary)",
       backgroundImage:
         "linear-gradient(90deg, rgb(1, 80, 167), rgb(2, 108, 223), rgb(1, 80, 167))"
     }}

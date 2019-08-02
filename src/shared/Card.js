@@ -5,9 +5,10 @@ function Card({ as: Comp = "div", style, ...rest }) {
     <Comp
       style={{
         position: "relative",
-        borderRadius: 4,
-        backgroundColor: "white",
         boxShadow: "0 2px 6px hsla(220, 10%, 40%, 0.3",
+        borderRadius: 4,
+        padding: 32,
+        backgroundColor: "white",
         ...style
       }}
       {...rest}
@@ -19,10 +20,8 @@ function Title({ as: Comp = "h2", ...rest }) {
   return (
     <Comp
       style={{
-        padding: 16,
-        fontSize: "1rem",
-        fontWeight: 600,
-        borderBottom: "1px solid hsl(220, 10%, 90%)"
+        fontSize: "1.125rem",
+        fontWeight: 600
       }}
       {...rest}
     />
@@ -46,7 +45,7 @@ function Action({ as: Comp = "button", ...rest }) {
 }
 
 function Body({ as: Comp = "div", ...rest }) {
-  return <Comp style={{ padding: 16 }} {...rest} />;
+  return <Comp style={{ marginTop: 32 }} {...rest} />;
 }
 
 Card.Title = Title;
