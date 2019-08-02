@@ -8,7 +8,8 @@ export default ({ partial = true, ...props }) => (
       const isActive = isPartiallyCurrent || isCurrent;
       return {
         style: {
-          color: isActive ? "red" : "blue"
+          fontWeight: isActive ? 600 : 400,
+          borderBottom: isActive && "2px solid white"
         }
       };
     }}
