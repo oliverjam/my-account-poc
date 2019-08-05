@@ -37,9 +37,14 @@ h4 {
   font-weight: 700;
 }
 
+p {
+  margin: 0;
+}
+
 input,
 label,
-button {
+button,
+select {
   display: block;
   font-weight: inherit;
   font-size: inherit;

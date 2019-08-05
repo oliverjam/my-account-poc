@@ -30,7 +30,7 @@ function EditCard({ title, children, onEditing, disabled, ...rest }) {
         </Card.Action>
       )}
       <Card.Body>
-        <Stack space="2rem">
+        <Stack as={editing ? "form" : "div"} space="2rem">
           <EditContext.Provider value={editing}>
             {children}
           </EditContext.Provider>
@@ -81,9 +81,38 @@ function Kyc({ kyc, type, children, ...rest }) {
       >
         <span>{children}</span>
       </summary>
-      <Stack style={{ marginTop: 16 }}>
-        <Input label="Document type" />
+      <Stack as="form" space="1.5rem" style={{ marginTop: 16 }}>
+        <label style={{ fontSize: 14 }} htmlFor="documentType">
+          Document type
+          <select
+            id="documentType"
+            style={{
+              ...inputStyles,
+              background: "none",
+              "-moz-appearance": "none",
+              "-webkit-appearance": "none",
+              appearance: "none"
+            }}
+          >
+            <option value="driversLicense">Driver's license</option>
+            <option value="passport">Passport</option>
+            <option value="nationalIdCard">Nation identity carx</option>
+          </select>
+        </label>
         <input type="file" />
+        <h3>Document requirements</h3>
+        <Stack
+          as="ul"
+          space="0.5rem"
+          style={{ listStyle: "disc", paddingLeft: "1rem" }}
+        >
+          <li>Should be in colour</li>
+          <li>Should not be expired</li>
+          <li>Needs to be visible and legible</li>
+          <li>File size should not exceed 10MB</li>
+          <li>Should be in a PDF, PNG or JPEG format</li>
+          <li>Name on document provided and account should match </li>
+        </Stack>
       </Stack>
     </details>
   );

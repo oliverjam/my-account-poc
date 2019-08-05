@@ -1,5 +1,6 @@
 import React from "react";
 import Stack from "../shared/Stack";
+import Card from "../shared/Card";
 import EditCard from "./EditCard";
 import VisuallyHidden from "../shared/VisuallyHidden";
 
@@ -12,6 +13,36 @@ function SellerDetails({ location }) {
     <div>
       <VisuallyHidden>Seller details</VisuallyHidden>
       <Stack space="1.5rem">
+        {kyc.length > 0 && (
+          <Stack as={Card} style={{ textAlign: "center" }}>
+            <div
+              style={{
+                width: "3rem",
+                height: "3rem",
+                margin: "0 auto",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "50%",
+                fontSize: "1.5rem",
+                fontWeight: "900",
+                backgroundColor: "red",
+                color: "white"
+              }}
+            >
+              !
+            </div>
+            <p style={{ fontWeight: 600 }}>
+              Before we can process any payments, we need to verify your
+              details.
+            </p>
+            <p>
+              <a href="#" style={{ color: "var(--primary)" }}>
+                Learn more
+              </a>
+            </p>
+          </Stack>
+        )}
         <EditCard
           title="Personal information"
           disabled={someEditing}
