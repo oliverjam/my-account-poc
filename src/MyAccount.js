@@ -9,7 +9,7 @@ import SettingsNav from "./settings/SettingsNav";
 function MyAccount({ children }) {
   return (
     <div className="page-layout">
-      <BlurredBackground />
+      <BlurredBackground style={{ gridColumn: "1 / -1", gridRow: "1 / 3" }} />
       <UserInfo style={{ gridColumn: "2 / 3", gridRow: "1 / 3" }} />
       <SideNav style={{ gridColumn: "2 / 3", gridRow: "3 / -1" }} />
 
@@ -24,9 +24,9 @@ function MyAccount({ children }) {
         }}
       >
         <Router primary={false}>
-          <EventsNav path="events/*" />
-          <ProfileNav path="profile/*" />
-          <SettingsNav path="settings/*" />
+          <EventsNav path="events" />
+          <ProfileNav path="profile" />
+          <SettingsNav path="settings" />
         </Router>
       </div>
       <div
@@ -127,8 +127,6 @@ function BlurredBackground({ style, ...rest }) {
       style={{
         position: "relative",
         overflow: "hidden",
-        gridColumn: "1 / -1",
-        gridRow: "1 / 3",
         backgroundColor: "rgba(0, 0, 0, 0.4)",
         ...style
       }}
